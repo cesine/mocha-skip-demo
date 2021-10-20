@@ -1,5 +1,7 @@
-describe.skip('skip in a describe', function () {
-  // this.skip(); // TypeError: this.skip is not a function
+describe('skip in a describe', function() {
+  if (process.env.FOO_ENABLED === 'false') {
+    // this.skip();  // TypeError: this.skip is not a function
+  }
 
   before(function() {
     console.log('before B');

@@ -1,6 +1,8 @@
 describe('skip in a before', () => {
   before(function() {
-    this.skip();
+    if (process.env.FOO_ENABLED === 'false') {
+      this.skip();
+    }
     console.log('before A');
   });
 

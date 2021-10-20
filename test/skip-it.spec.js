@@ -4,7 +4,9 @@ describe('skip in an it', () => {
   });
 
   it('should run', function () {
-    this.skip();
+    if (process.env.FOO_ENABLED === 'false') {
+      this.skip();
+    }
 
     console.log('it C');
     console.assert(true);
